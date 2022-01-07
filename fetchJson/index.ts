@@ -58,3 +58,18 @@ logW(w);
 const logD = ({date,weather} : {date:Date, weather: string}):void =>{
    console.log(date);
 };
+
+const drink = {
+   color: 'brown',
+   carb: true,
+   sugar : 40
+};
+
+const pepsi = ['brown', true, 40]; //array
+const pepsi2 : [string, boolean, number] = ['brown', true, 40]; //tuple
+pepsi[0] = 1;
+pepsi2[0] = 1;
+pepsi2[9] = 1;
+
+type Drink = [string, boolean, number];
+const pepsi3:Drink= ['brown', true, 40];
