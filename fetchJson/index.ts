@@ -73,3 +73,18 @@ pepsi2[9] = 1;
 
 type Drink = [string, boolean, number];
 const pepsi3:Drink= ['brown', true, 40];
+
+interface testI  {
+   name: string;
+   year: number;
+}
+const testO = { name : ' abc', year : 200}
+const test2 = { name : ' abc', year : 200, qq:false}
+const test3 = {  year : 200, qq:false, name : 'aa'}
+
+const print = (v:testI) : void =>{
+   console.log(v.year);
+}
+print(testO); // objects do not implement interfaces directly, but ts can look up if object has needed fields/functions
+print(test2);
+print(test3);
