@@ -1,6 +1,6 @@
 import * as faker from 'faker';
 
-class User{
+export class User{
     name:string;
     location:{
         lat:number;
