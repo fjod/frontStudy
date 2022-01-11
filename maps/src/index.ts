@@ -1,14 +1,10 @@
 /// <reference types="@types/google.maps" />
 
 import { User } from "./User";
+import {CustomMap} from "./CustomMap";
 
 const u = new User();
 console.log(u);
 
-new google.maps.Map(document.getElementById('map'), {
-    zoom: 1,
-    center: {
-        lat: 0,
-        lng: 0
-    }
-});
+const map = new CustomMap('map');
+map.addMarker(u);
