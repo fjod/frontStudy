@@ -1,6 +1,9 @@
+import axios from "axios";
+
 interface UserProps{
     name?: string; // ? makes it optional
-    age?: number
+    age?: number;
+    id?: number;
 }
 
 type Callback = () => void;
@@ -35,5 +38,19 @@ export class User{
         }
 
         handlers.forEach(cb => cb());
+    }
+    fetch(){
+        axios.get(`http://localhost:3000/users/${this.get('id')}`).then(response => {
+            this.set(response.data);
+        });
+    }
+    save(){
+        const id = this.get('id');
+        if (id){
+            axios.put(`http://localhost:3000/users/${id}`, this.data);
+        }
+        else{
+            axios.post(`http://localhost:3000/users`, this.data);
+        }
     }
 }
